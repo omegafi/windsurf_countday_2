@@ -1,0 +1,15 @@
+[core]
+	bare = false
+	repositoryformatversion = 0
+	filemode = true
+	ignorecase = true
+	precomposeunicode = true
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/omegafi/windsurf_countday_1.git
+[branch "test"]
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*

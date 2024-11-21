@@ -1,0 +1,40 @@
+0000000000000000000000000000000000000000 247a833dc7cb001f189e8c65d0c49c6795522ebe Server Doğan <serverdogan@hotmail.com> 1732143710 +0300	commit (initial): Initial Commit
+247a833dc7cb001f189e8c65d0c49c6795522ebe 83c2b570cd6e6652035bdd85dd51829dc7e5621b Server Doğan <serverdogan@hotmail.com> 1732143779 +0300	commit (amend): Initial Commit
+83c2b570cd6e6652035bdd85dd51829dc7e5621b 83c2b570cd6e6652035bdd85dd51829dc7e5621b Server Doğan <serverdogan@hotmail.com> 1732143920 +0300	checkout: moving from main to test
+83c2b570cd6e6652035bdd85dd51829dc7e5621b edb34b8abca2a6adfd4fcd407dc1b829475eb9dd Server Doğan <serverdogan@hotmail.com> 1732143952 +0300	commit (amend): Initial Commit
+edb34b8abca2a6adfd4fcd407dc1b829475eb9dd e17097456429d0eaa3dba55a291a79426019b9fd Server Doğan <serverdogan@hotmail.com> 1732144217 +0300	commit: denemem mesaj
+e17097456429d0eaa3dba55a291a79426019b9fd 3552c790eb2e39f03e8f64b1031bece128c934bd Server Doğan <serverdogan@hotmail.com> 1732144532 +0300	commit: burası samiyen
+3552c790eb2e39f03e8f64b1031bece128c934bd 64a18d3d944a46bdcfc3a73cbac1432102ddb92a Server Doğan <serverdogan@hotmail.com> 1732167576 +0300	commit (amend): burası samiyen
+64a18d3d944a46bdcfc3a73cbac1432102ddb92a 64a18d3d944a46bdcfc3a73cbac1432102ddb92a Server Doğan <serverdogan@hotmail.com> 1732167601 +0300	reset: moving to HEAD
+64a18d3d944a46bdcfc3a73cbac1432102ddb92a 83c2b570cd6e6652035bdd85dd51829dc7e5621b Server Doğan <serverdogan@hotmail.com> 1732167641 +0300	checkout: moving from test to main
+83c2b570cd6e6652035bdd85dd51829dc7e5621b 64a18d3d944a46bdcfc3a73cbac1432102ddb92a Server Doğan <serverdogan@hotmail.com> 1732167654 +0300	checkout: moving from main to test
+64a18d3d944a46bdcfc3a73cbac1432102ddb92a 83c2b570cd6e6652035bdd85dd51829dc7e5621b Server Doğan <serverdogan@hotmail.com> 1732168675 +0300	checkout: moving from test to main
+83c2b570cd6e6652035bdd85dd51829dc7e5621b fa8a70508f7aed0febe8ba3d2b52e4584343c0c3 Server Doğan <serverdogan@hotmail.com> 1732172481 +0300	commit: main den devam
+fa8a70508f7aed0febe8ba3d2b52e4584343c0c3 43db64121773664aa6c263c4a3e110d7efb5c97c Server Doğan <serverdogan@hotmail.com> 1732172690 +0300	commit (amend): main den devam
+43db64121773664aa6c263c4a3e110d7efb5c97c 4a2eef9213928dbaee2ee1b5f07a67873a4cde42 Server Doğan <serverdogan@hotmail.com> 1732174257 +0300	commit (amend): main den devam
+4a2eef9213928dbaee2ee1b5f07a67873a4cde42 4a2eef9213928dbaee2ee1b5f07a67873a4cde42 Server Doğan <serverdogan@hotmail.com> 1732174317 +0300	reset: moving to HEAD
+4a2eef9213928dbaee2ee1b5f07a67873a4cde42 28ea78b679e7eac4d70338fddca6fdfefd82471d Server Doğan <serverdogan@hotmail.com> 1732174320 +0300	commit (amend): main den devam
+28ea78b679e7eac4d70338fddca6fdfefd82471d 6678ae4282262e046e80d16333245b594f2b3dd1 Server Doğan <serverdogan@hotmail.com> 1732181186 +0300	commit (amend): main den devam
+6678ae4282262e046e80d16333245b594f2b3dd1 6678ae4282262e046e80d16333245b594f2b3dd1 Server Doğan <serverdogan@hotmail.com> 1732181358 +0300	reset: moving to HEAD
+6678ae4282262e046e80d16333245b594f2b3dd1 e6c5dfc1d7f174911203e240c6e3626e2b9569fb Server Doğan <serverdogan@hotmail.com> 1732181372 +0300	commit (amend): main den devam
+e6c5dfc1d7f174911203e240c6e3626e2b9569fb 716575a585e8251a72be418df9300d2787c8abfb Server Doğan <serverdogan@hotmail.com> 1732196059 +0300	commit: ekleme silme, etkinlik türüne göre listeleme
+716575a585e8251a72be418df9300d2787c8abfb 55e0d364a2c45c4f27a6ce389ac8652daad674b7 Server Doğan <serverdogan@hotmail.com> 1732196157 +0300	commit (amend): ekleme silme, etkinlik türüne göre listeleme
+55e0d364a2c45c4f27a6ce389ac8652daad674b7 2830efe3795b4f569dff8426201ad5f5d70ea60a Server Doğan <serverdogan@hotmail.com> 1732196291 +0300	commit: test c
+2830efe3795b4f569dff8426201ad5f5d70ea60a b34ef8f65cbd862f7f115ae08c6e06d857a1a48b Server Doğan <serverdogan@hotmail.com> 1732196407 +0300	commit: tes 2
+b34ef8f65cbd862f7f115ae08c6e06d857a1a48b e2fe11e98f8355cc46efd172de3a10b56c761f1a Server Doğan <serverdogan@hotmail.com> 1732196455 +0300	commit: test 3
+e2fe11e98f8355cc46efd172de3a10b56c761f1a 7555df3200c4118fee4614242118154b0fedaa33 Server Doğan <serverdogan@hotmail.com> 1732202554 +0300	commit: dark light theme eklendi
+7555df3200c4118fee4614242118154b0fedaa33 b644ace58a348686c29136c43994db480af7a16f Server Doğan <serverdogan@hotmail.com> 1732215412 +0300	commit: görünüm modları butonu toolbara çekildi
+b644ace58a348686c29136c43994db480af7a16f 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 Server Doğan <serverdogan@hotmail.com> 1732218124 +0300	commit: etkinlikler slider olarak ve tam ekran görünümü ile
+334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 Server Doğan <serverdogan@hotmail.com> 1732220863 +0300	reset: moving to HEAD
+334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 Server Doğan <serverdogan@hotmail.com> 1732220904 +0300	checkout: moving from main to 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71
+334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 b644ace58a348686c29136c43994db480af7a16f Server Doğan <serverdogan@hotmail.com> 1732221150 +0300	checkout: moving from 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 to 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71
+b644ace58a348686c29136c43994db480af7a16f 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 Server Doğan <serverdogan@hotmail.com> 1732221365 +0300	checkout: moving from b644ace58a348686c29136c43994db480af7a16f to main
+334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 Server Doğan <serverdogan@hotmail.com> 1732221372 +0300	reset: moving to 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71
+334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 Server Doğan <serverdogan@hotmail.com> 1732221376 +0300	reset: moving to 334fc0dc2ecd07e304aec57d98c1db9c03cb9d71
+334fc0dc2ecd07e304aec57d98c1db9c03cb9d71 d021757b144c05ae953a9429f0239a9e1c185690 Server Doğan <serverdogan@hotmail.com> 1732221420 +0300	commit (cherry-pick): görünüm modları butonu toolbara çekildi
+d021757b144c05ae953a9429f0239a9e1c185690 d021757b144c05ae953a9429f0239a9e1c185690 Server Doğan <serverdogan@hotmail.com> 1732221509 +0300	reset: moving to d021757b144c05ae953a9429f0239a9e1c185690
+d021757b144c05ae953a9429f0239a9e1c185690 d021757b144c05ae953a9429f0239a9e1c185690 Server Doğan <serverdogan@hotmail.com> 1732221534 +0300	reset: moving to d021757b144c05ae953a9429f0239a9e1c185690
+d021757b144c05ae953a9429f0239a9e1c185690 d021757b144c05ae953a9429f0239a9e1c185690 Server Doğan <serverdogan@hotmail.com> 1732222466 +0300	reset: moving to HEAD
+d021757b144c05ae953a9429f0239a9e1c185690 d021757b144c05ae953a9429f0239a9e1c185690 Server Doğan <serverdogan@hotmail.com> 1732222502 +0300	reset: moving to d021757b144c05ae953a9429f0239a9e1c185690
+d021757b144c05ae953a9429f0239a9e1c185690 7555df3200c4118fee4614242118154b0fedaa33 Server Doğan <serverdogan@hotmail.com> 1732222610 +0300	reset: moving to 7555df3
+7555df3200c4118fee4614242118154b0fedaa33 d021757b144c05ae953a9429f0239a9e1c185690 Server Doğan <serverdogan@hotmail.com> 1732222747 +0300	reset: moving to d021757
