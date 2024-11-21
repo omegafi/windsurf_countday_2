@@ -153,21 +153,12 @@ struct EditSpecialDayView: View {
                         )
                         .onTapGesture {
                             type = eventType
-                            if themeColor == day.themeColor {
-                                // Only update color if user hasn't manually changed it
-                                themeColor = eventType.defaultColor
-                            }
+                            themeColor = eventType.defaultColor
                         }
                     }
                 }
                 .padding(.horizontal, 4)
             }
-            
-            ColorPicker("Theme Color", selection: Binding(
-                get: { Color(hex: themeColor) },
-                set: { themeColor = $0.toHex() ?? type.defaultColor }
-            ))
-            .padding(.top, 8)
         }
         .padding()
         .background(

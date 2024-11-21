@@ -12,7 +12,6 @@ struct AddSpecialDayView: View {
     @State private var selectedType = SpecialDayType.birthday
     @State private var isCountingForward = false
     @State private var notes = ""
-    @State private var selectedColor = Color.blue
     @State private var showingDatePicker = false
     
     private let backgroundColor = Color(.systemGroupedBackground)
@@ -43,7 +42,6 @@ struct AddSpecialDayView: View {
                     countingSection
                     dateSection
                     typeSection
-                    colorSection
                     notesSection
                 }
                 .padding(.vertical)
@@ -198,19 +196,6 @@ struct AddSpecialDayView: View {
         }
     }
     
-    private var colorSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "Color", icon: "paintpalette.fill")
-            
-            ColorPicker("", selection: $selectedColor)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(secondaryColor)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding(.horizontal)
-        }
-    }
-    
     private var notesSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             SectionHeader(title: "Notes", icon: "note.text")
@@ -225,34 +210,17 @@ struct AddSpecialDayView: View {
     }
     
     private func saveSpecialDay() {
-        let hexColor = convertColorToHex(selectedColor)
-        
         let specialDay = SpecialDay(
             title: title,
             date: date,
             type: selectedType,
-            themeColor: hexColor,
+            themeColor: selectedType.defaultColor,
             isCountingForward: isCountingForward,
             notes: notes.isEmpty ? nil : notes
         )
         
         modelContext.insert(specialDay)
         dismiss()
-    }
-    
-    private func convertColorToHex(_ color: Color) -> String {
-        let uiColor = UIColor(color)
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        
-        uiColor.getRed(&red, green: &green, blue: &blue, alpha: nil)
-        
-        return String(format: "#%02X%02X%02X", 
-            Int(red * 255), 
-            Int(green * 255), 
-            Int(blue * 255)
-        )
     }
 }
 

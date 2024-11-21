@@ -66,6 +66,7 @@ struct ContentView: View {
     @State private var showSettings = false
     @AppStorage("selectedViewMode") private var selectedViewMode: ViewMode = .cards
     @State private var filterMode: FilterMode = .all
+    @State private var selectedSpecialDay: SpecialDay?
     
     private var filteredDays: [SpecialDay] {
         switch filterMode {
@@ -80,6 +81,13 @@ struct ContentView: View {
     
     private var navigationTitle: String {
         "\(filterMode.title) (\(filteredDays.count))"
+    }
+    
+    private var toolbarColor: Color {
+        if let selectedDay = selectedSpecialDay {
+            return Color(hex: selectedDay.themeColor).opacity(0.9)
+        }
+        return .blue
     }
     
     private func cycleViewMode() {
@@ -97,25 +105,55 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Group {
-                switch selectedViewMode {
-                case .cards:
-                    GeometryReader { geometry in
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack(spacing: 0) {
-                                ForEach(filteredDays) { day in
-                                    SpecialDayCardView(day: day)
-                                        .frame(width: geometry.size.width, height: geometry.size.height)
+                if filteredDays.isEmpty {
+                    VStack(spacing: 20) {
+                        Image(systemName: "calendar.badge.plus")
+                            .font(.system(size: 60))
+                            .foregroundColor(toolbarColor)
+                        
+                        Text("Henüz Hiç Özel Gün Eklenmemiş")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        
+                        Text("Özel günlerinizi ekleyerek takip etmeye başlayın")
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal)
+                        
+                        Button(action: { showingAddSheet = true }) {
+                            Label("Özel Gün Ekle", systemImage: "plus.circle.fill")
+                                .font(.headline)
+                                .padding()
+                                .background(Color.blue.opacity(0.1))
+                                .foregroundColor(toolbarColor)
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                        }
+                        .padding(.top)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color(.systemGroupedBackground))
+                } else {
+                    switch selectedViewMode {
+                    case .cards:
+                        GeometryReader { geometry in
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(spacing: 0) {
+                                    ForEach(filteredDays) { day in
+                                        SpecialDayCardView(day: day)
+                                            .frame(width: geometry.size.width, height: geometry.size.height)
+                                    }
                                 }
                             }
+                            .scrollTargetBehavior(.paging)
+                            .ignoresSafeArea()
                         }
-                        .scrollTargetBehavior(.paging)
                         .ignoresSafeArea()
-                    }
-                    .ignoresSafeArea()
-                default:
-                    ScrollView {
-                        SpecialDaysListView(days: filteredDays, viewMode: selectedViewMode)
-                            .padding(.horizontal)
+                    default:
+                        ScrollView {
+                            SpecialDaysListView(days: filteredDays, viewMode: selectedViewMode)
+                                .padding(.horizontal)
+                        }
                     }
                 }
             }
@@ -124,33 +162,25 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: { showSettings = true }) {
-                        Image(systemName: "gear")
-                            .imageScale(.large)
-                            .foregroundColor(.white.opacity(0.9))
+                        Image(systemName: "gearshape.fill")
+                            .foregroundStyle(toolbarColor)
                     }
                 }
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 16) {
-                        Button(action: cycleViewMode) {
-                            Image(systemName: selectedViewMode.icon)
-                                .imageScale(.large)
-                                .foregroundColor(.white.opacity(0.9))
-                        }
-                        .help(selectedViewMode.title)
-                        
-                        Button(action: cycleFilterMode) {
-                            Image(systemName: filterMode.icon)
-                                .imageScale(.large)
-                                .foregroundColor(.white.opacity(0.9))
-                        }
-                        .help(filterMode.title)
-                        
-                        Button(action: { showingAddSheet = true }) {
-                            Image(systemName: "plus.circle.fill")
-                                .imageScale(.large)
-                                .foregroundColor(.white.opacity(0.9))
-                        }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button(action: cycleFilterMode) {
+                        Image(systemName: filterMode.icon)
+                            .foregroundStyle(toolbarColor)
+                    }
+                    
+                    Button(action: cycleViewMode) {
+                        Image(systemName: selectedViewMode.icon)
+                            .foregroundStyle(toolbarColor)
+                    }
+                    
+                    Button(action: { showingAddSheet = true }) {
+                        Image(systemName: "plus.circle.fill")
+                            .foregroundStyle(toolbarColor)
                     }
                 }
             }
@@ -193,13 +223,15 @@ struct SpecialDaysListView: View {
             
         case .grid:
             LazyVGrid(columns: [
-                GridItem(.flexible()),
-                GridItem(.flexible())
+                GridItem(.flexible(), spacing: 16),
+                GridItem(.flexible(), spacing: 16)
             ], spacing: 16) {
                 ForEach(days) { day in
                     SpecialDayGridItemView(day: day)
                 }
             }
+            .padding(.horizontal)
+            .padding(.vertical, 8)
         }
     }
 }

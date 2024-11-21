@@ -44,6 +44,3 @@ class AppState: ObservableObject {
         UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
     }
 }
-
-
-// test hacı

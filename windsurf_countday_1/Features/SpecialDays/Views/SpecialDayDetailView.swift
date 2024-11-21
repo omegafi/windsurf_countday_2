@@ -41,12 +41,12 @@ struct SpecialDayDetailView: View {
                 HStack(spacing: 16) {
                     Button(action: { showingEditSheet = true }) {
                         Image(systemName: "pencil")
-                            .foregroundColor(Color(hex: day.themeColor))
+                            .foregroundStyle(.blue)
                     }
                     
                     Button(action: { showingDeleteAlert = true }) {
                         Image(systemName: "trash")
-                            .foregroundColor(.red)
+                            .foregroundStyle(.red)
                     }
                 }
             }
