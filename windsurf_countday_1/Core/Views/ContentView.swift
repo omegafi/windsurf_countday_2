@@ -50,7 +50,7 @@ enum FilterMode: String, CaseIterable {
         }
     }
     
-    var nextMode: FilterMode {
+    var next: FilterMode {
         switch self {
         case .all: return .upcoming
         case .upcoming: return .past
@@ -67,6 +67,7 @@ struct ContentView: View {
     @AppStorage("selectedViewMode") private var selectedViewMode: ViewMode = .cards
     @State private var filterMode: FilterMode = .all
     @State private var selectedSpecialDay: SpecialDay?
+    @State private var currentPage = 0
     
     private var filteredDays: [SpecialDay] {
         switch filterMode {
@@ -98,7 +99,7 @@ struct ContentView: View {
     
     private func cycleFilterMode() {
         withAnimation {
-            filterMode = filterMode.nextMode
+            filterMode = filterMode.next
         }
     }
     
@@ -136,19 +137,16 @@ struct ContentView: View {
                 } else {
                     switch selectedViewMode {
                     case .cards:
-                        GeometryReader { geometry in
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                LazyHStack(spacing: 0) {
-                                    ForEach(filteredDays) { day in
-                                        SpecialDayCardView(day: day)
-                                            .frame(width: geometry.size.width, height: geometry.size.height)
+                        TabView(selection: $currentPage) {
+                            ForEach(Array(filteredDays.enumerated()), id: \.element.id) { index, day in
+                                SpecialDayCardView(day: day)
+                                    .tag(index)
+                                    .onAppear {
+                                        selectedSpecialDay = day
                                     }
-                                }
                             }
-                            .scrollTargetBehavior(.paging)
-                            .ignoresSafeArea()
                         }
-                        .ignoresSafeArea()
+                        .tabViewStyle(.page(indexDisplayMode: .never))
                     default:
                         ScrollView {
                             SpecialDaysListView(days: filteredDays, viewMode: selectedViewMode)
@@ -189,6 +187,11 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showSettings) {
                 SettingsView()
+            }
+        }
+        .onAppear {
+            if !filteredDays.isEmpty {
+                selectedSpecialDay = filteredDays[currentPage]
             }
         }
     }
