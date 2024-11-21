@@ -137,16 +137,21 @@ struct ContentView: View {
                 } else {
                     switch selectedViewMode {
                     case .cards:
-                        TabView(selection: $currentPage) {
-                            ForEach(Array(filteredDays.enumerated()), id: \.element.id) { index, day in
-                                SpecialDayCardView(day: day)
-                                    .tag(index)
-                                    .onAppear {
-                                        selectedSpecialDay = day
-                                    }
+                        GeometryReader { geometry in
+                            TabView(selection: $currentPage) {
+                                ForEach(Array(filteredDays.enumerated()), id: \.element.id) { index, day in
+                                    SpecialDayCardView(day: day)
+                                        .tag(index)
+                                        .onAppear {
+                                            selectedSpecialDay = day
+                                        }
+                                }
                             }
+                            .tabViewStyle(.page(indexDisplayMode: .never))
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .ignoresSafeArea()
                         }
-                        .tabViewStyle(.page(indexDisplayMode: .never))
+                        .ignoresSafeArea()
                     default:
                         ScrollView {
                             SpecialDaysListView(days: filteredDays, viewMode: selectedViewMode)

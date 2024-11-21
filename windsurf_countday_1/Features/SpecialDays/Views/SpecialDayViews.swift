@@ -217,7 +217,8 @@ struct SpecialDayCardView: View {
                 // Arka plan
                 LinearGradient(
                     gradient: Gradient(colors: [
-                        Color(hex: day.themeColor).opacity(0.2),
+                        Color(hex: day.themeColor).opacity(0.05),
+                        Color(hex: day.themeColor).opacity(0.3),
                         Color(hex: day.themeColor).opacity(0.6)
                     ]),
                     startPoint: .top,
